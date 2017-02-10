@@ -1,0 +1,98 @@
+<extend name="Index/index" />
+<block name="header"><title>管理员管理</title></block>
+<block name="css">
+ <style>
+  .pagination span.current{
+  cursor: default;
+  /*
+  admin 
+  */
+  }
+
+  .pagination div>a:first-child{
+      border-left-width: 1px;
+      border-radius: 3px 0 0 3px;
+  }
+  .pagination div>a:last-child{
+      border-radius: 0 3px 3px 0;
+  }
+  .pagination a.num,
+  .pagination span.current,
+  .pagination a.next,
+  .pagination a.prev,
+  .pagination a.first,
+  .pagination a.end{
+      float: left;
+      padding: 0 14px;
+      line-height: 38px;
+      text-decoration: none;
+      background-color: #ffffff;
+      border: 1px solid #dddddd;
+      border-left-width: 0;
+  }
+  </style>
+</block>
+<block name="content">
+  <div class="header"><h1 class="page-title">管理员信息列表</h1></div>
+  <ul class="breadcrumb">
+      <li><a href="{{:U('Admin/Index/index')}}">Home</a> <span class="divider">/</span></li>
+      <li class="active">List</li>
+  </ul>
+
+  <div class="container-fluid">
+    <div class="row-fluid">
+                
+        <div class="btn-toolbar">
+          <button class="btn btn-primary" onClick="location='{{:U('Admin/Admin/add')}}'"><i class="icon-plus"></i>新增管理员信息</button>
+          <div class="btn-group"></div>
+        </div>
+        <div class="well">
+            <table class="table">
+              <tr>
+                <th>ID</th>
+                <th>登陆账号</th>
+                <th>登陆密码</th>
+                <th>账号</th>
+                <th>排序</th>
+                <th>添加时间</th>
+                <th style="width: 26px;"></th>
+              </tr>
+              <volist name="artList" id="item">
+              <tr>
+                <td>{{$item['id']}}</td>
+                <td>{{$item['is_show']==1?'启用':'禁用'}}</td>
+                <td>{{$item['orders']}}</td>
+                <td>{{:date('Y-m-d H:i:s',$item['addtime'])}}</td>
+                <td>
+                    <a href="user.html"><i class="icon-pencil"></i></a>
+                    <a href="#myModal" class="del-a" data-href="{{:U('Admin/Admin/index','del='.$item['id'])}}" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
+                </td>
+
+              </tr>
+              </volist>
+            </table>
+        </div>
+        <div class="pagination">
+          {{$showPage}}
+        </div>         
+      </div>
+  </div>
+</block>
+<block name="MsgBox">
+    <div class="modal-footer">
+      <button class="btn" data-dismiss="modal" aria-hidden="true">取消</button>
+      <button class="btn btn-danger confirm-del" data-dismiss="modal">删除</button>
+    </div>
+    <script>
+    var $url;
+    $('.del-a').on('click',function(){
+       $url = $(this).attr('data-href');
+    })
+    $('.confirm-del').on('click',function(){
+      setTimeout(function(){
+        location.assign($url);
+      },300);
+    })
+    </script>
+</block>
+

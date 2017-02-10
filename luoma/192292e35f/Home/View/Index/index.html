@@ -1,0 +1,60 @@
+<!-- 	banner -->
+	 <div class="index-lun">
+	 	<ul class="rslides" id="slider3">
+			<li><a href="#"><img src="__IMG__/banner.jpg" alt=""></a></li>
+			
+			<li><a href="#"><img src="__IMG__/banner.jpg" alt=""></a></li>
+			<li><a href="#"><img src="__IMG__/banner.jpg" alt=""></a></li>
+		</ul>
+		<!-- Slideshow 3 Pager  slide   -->
+		
+       
+    </div>
+	
+
+	<div class="index-con">
+		<div class="con_a">
+			<div class="con_a_a  w1000  clear">
+				<img src="__IMG__/pro_l.png"/class="fl mt-30 " >
+				<h3 class="fl t-c"><i>产品展示</i><br/><span><i>Product  display</i></span></h3>
+				<img src="__IMG__/pro_r.png"/class="fl mt-30">
+				
+			</div>
+<ul class="zhanshi  clear  w1000">
+				<volist name="pro" id="item">
+				<li class="pr">
+					<a href="{{:U('Goods/index',['cid'=>$item['id']])}}"><img src="{{$item['cover']}}"/></a>
+					<div class="show hover-tg  " >
+						<div class="zbc pa">
+						</div>
+						<span class="ff pa c-f f-16">{{:\\Org\\Util\\String::msubstr($item['name'],0,5,'utf-8',false)}}</span>
+						<a href="javascript:;" class="ee pa c-f">查看全部产品</a> 
+					</div>
+				</li>
+				</volist>
+			</ul>
+		</div>
+		<div class="con-b">
+			<div class="con_a_a  w1000  clear">
+				<img src="__IMG__/pro_l.png"/class="fl mt-30" >
+				<h3 class="fl t-c"><i>新品展示</i><br/><span><i>New features</i></span></h3>
+				<img src="__IMG__/pro_r.png"/class="fl mt-30">
+				
+			</div>
+			<div class="w1000">
+				<img src="__IMG__/ima1.jpg" alt=""></img>
+				<div class="new-main">
+					<h3 class="title-h3">
+						<img class="fl" src="__IMG__/row.png" alt=""></img>
+						<span class="fl">罗马国际-整体软装展示01 </span>
+					</h3>
+					<p>
+						罗马布艺连锁机构成立于1999年，是由罗马国际集团有限公司（香港）独资的专业从事家居布艺产品设计、生产、销售、服务于一体的公司。多年来一直以“创国际优质布艺品牌”为发展目标，现已发展成为拥有50家自营连锁店，一间2000平方米的大型展示厅，以及60000平方尺的生产加工基地，并拥有一批出色的销售精英、设计人才及技术骨干。  
+
+					</p>
+				</div>
+			</div>
+
+
+		</div>
+	</div>

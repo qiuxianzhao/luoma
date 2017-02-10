@@ -1,0 +1,57 @@
+<extend name="Index/index" />
+<block name="content">
+<div class="header"><h1 class="page-title">配置列表</h1></div>
+<ul class="breadcrumb">
+	<li><a href="{{:U('Admin/Nav/Index')}}">Home</a> <span class="divider">/</span></li>
+	<li class="active">控制器</li>
+</ul>
+<div class="container-fluid">
+	<div class="row-fluid">
+			<div class="btn-toolbar">
+				<button class="btn btn-primary" onClick="location='{{:U('Nav/index')}}'"><i class="icon-list"></i>控制</button>
+			  <div class="btn-group">
+			  </div>
+			</div>
+			<div class="well">
+				<div id="myTabContent" class="tab-content">
+				  <div class="tab-pane active in" id="home">
+					<form action="" method="post" enctype="multipart/form-data">
+						<label>導航分类</label>
+						<select name="cid" class="input-xlarge">
+						  <volist name="cateList" id="item">
+						  <option value="{{$item['id']}}">{{$item['name']}}</option>
+						  </volist>
+						</select>
+						<!-- <label>導航ID</label> -->
+						<!-- <input type="tex2345t" name="id" value="" class="input-xxlarge"> -->
+						<label>父级ID</label>
+						<input type="text" name="pid" value="" class="input-xxlarge">
+						<label>导航名称</label>
+						<textarea value="text" name="name" rows="3" class="input-xxlarge"></textarea>
+						<label>英文名称</label>
+						<input type="text" name="en_name" value="0" class="input-xlarge">
+						<label>导航连接</label>
+						<input type="text" name="href" value="0" class="input-xlarge">
+						<label>展示位置</label>
+						<select name="position" class="input-xlarge">
+						  <option value="top">顶部</option>
+						  <option value="left">侧边</option>
+						  <option value="footer">底部</option>
+						</select>
+						<label>是否显示</label>
+						<select name="is_show" class="input-xlarge">
+						  <option value="1">显示</option>
+						  <option value="0">隐藏</option>
+						</select>
+						<!-- id,var,title,value,orders,is_show,addtime' -->
+						<label>添加时间</label>
+						<input type="text" name="addtime" value="" class="input-xlarge">
+						<label></label>
+						<input class="btn btn-primary" type="submit" value="提交" />
+					</form>
+				  </div>
+			  </div>
+			</div>
+	</div>
+</div>
+</block>

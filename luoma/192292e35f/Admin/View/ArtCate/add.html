@@ -1,0 +1,46 @@
+<extend name="Index/index" />
+<block name="content">
+<div class="header"><h1 class="page-title">文章分类</h1></div>
+<ul class="breadcrumb">
+  <li><a href="{{:U('Admin/ArtCate/Index')}}">Home</a> <span class="divider">/</span></li>
+  <li class="active">文章分类</li>
+</ul>
+<div class="container-fluid">
+  <div class="row-fluid">
+      <div class="btn-toolbar">
+        <button class="btn btn-primary" onClick="location='{{:U('ArtCate/index')}}'"><i class="icon-list"></i> 文章列表</button>
+        <div class="btn-group">
+        </div>
+      </div>
+      <div class="well">
+        <div id="myTabContent" class="tab-content">
+          <div class="tab-pane active in" id="home">
+          <form action="" method="post" enctype="multipart/form-data">
+            <label>文章分类</label>
+            <select name="cid" class="input-xlarge">
+              <volist name="cateList" id="item">
+              <option value="{{$item['id']}}">{{$item['name']}}</option>
+              </volist>
+            </select>
+            <label>分类ID</label>
+            <input type="text" name="id" value="" class="input-xxlarge">
+            <label>分类名称</label>
+            <input type="text" name="name" value="" class="input-xxlarge">
+            <label>排序</label>
+            <input type="text" name="orders" value="" class="input-xxlarge">       
+            <label>是否显示</label>
+            <select name="is_show" class="input-xlarge">
+              <option value="1">显示</option>
+              <option value="0">隐藏</option>
+            </select>
+            <label>添加时间</label>
+            <input type="text" name="addtime" value="1" class="input-xlarge">                
+            <label></label>
+            <input class="btn btn-primary" type="submit" value="提交" />
+          </form>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+</block>

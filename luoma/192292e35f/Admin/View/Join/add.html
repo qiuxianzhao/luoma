@@ -1,0 +1,52 @@
+<extend name="Index/index" />
+<block name="content">
+<div class="header"><h1 class="page-title">添加入驻商</h1></div>
+<ul class="breadcrumb">
+	<li><a href="{{:U('Admin/Join/Index')}}">Home</a> <span class="divider">/</span></li>
+	<li class="active">添加入驻商</li>
+</ul>
+<div class="container-fluid">
+	<div class="row-fluid">
+			<div class="btn-toolbar">
+				<button class="btn btn-primary" onClick="location='{{:U('Join/index')}}'"><i class="icon-list"></i>入驻商列表</button>
+			  <div class="btn-group">
+			  </div>
+			</div>
+			<div class="well">
+				<div id="myTabContent" class="tab-content">
+				  <div class="tab-pane active in" id="home">
+					<form action="{{:U('Admin/Join/add')}}" method="post" enctype="multipart/form-data">
+						<label>id</label>
+						<input type="text" name="id" value="" class="input-xxlarge">
+						<label>名字</label>
+						<input type="text" name="name" value="" class="input-xxlarge">
+						<label>电话</label>
+						<input type="text" name="phone" value="" class="input-xxlarge">
+						<label>传真</label>
+						<input type="text" name="fax" value="" class="input-xxlarge">
+						<label>邮箱</label>
+						<input type="text" name="email" value="" class="input-xxlarge">
+						<label>QQ\旺旺</label>
+						<input type="text" name="qq" value="" class="input-xxlarge">
+						<label>标题</label>
+						<input type="text" name="title" value="" class="input-xxlarge">
+						<label>内容</label>
+						<input type="text" name="content" value="" class="input-xxlarge">
+						<label>排序</label>
+						<input type="text" name="orders" value="" class="input-xxlarge">
+						<label>添加时间</label>
+						<input type="text" name="addtime" value="" class="input-xxlarge">
+						<label>状态</label>
+						<select name="is_show" class="input-xlarge">
+						  <option value="1">启用</option>
+						  <option value="0">禁用</option>
+						</select>
+						<label></label>
+						<input class="btn btn-primary" type="submit" value="提交" />
+					</form>
+				  </div>
+			  </div>
+			</div>
+	</div>
+</div>
+</block>

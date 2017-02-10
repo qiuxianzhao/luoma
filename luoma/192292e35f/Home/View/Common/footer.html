@@ -1,0 +1,23 @@
+  <div class="footer">
+    <div class="foot">
+         <div class="foot1 foot1_border layout2">
+          <ul class="clear oh">
+              <volist name="footerNav" id="item">
+              <li>
+                <div class="foot1_s">
+                  <b> <a href="{{$item['href']}}">{{$item['name']}} | {{$item['en_name']}}</a></b>
+                  <ul class="fl">
+                    <volist name="item['son']" id="i">
+                      <li><a href="{{$i['href']}}">{{$i['name']}}</a></li>
+                    </volist>
+                  </ul>
+                </div>
+              </li>
+              </volist>
+            </ul>
+        </div> 
+      </div>
+  </div>
+  <div class="foot2">
+    <p class="t-c ">粤ICP备120860000号     Copyright © 2015 罗马国际 All Rights Reserved  </p>
+  </div>

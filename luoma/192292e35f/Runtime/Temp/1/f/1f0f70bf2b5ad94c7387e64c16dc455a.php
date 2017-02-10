@@ -1,0 +1,3 @@
+<?php
+//000000000010a:4:{i:0;a:3:{s:2:"id";s:1:"3";s:4:"name";s:12:"艺术墙纸";s:5:"cover";s:27:"/Public/Home/Images/ima.jpg";}i:1;a:3:{s:2:"id";s:1:"1";s:4:"name";s:6:"窗帘";s:5:"cover";s:27:"/Public/Home/Images/ima.jpg";}i:2;a:3:{s:2:"id";s:1:"4";s:4:"name";s:30:"暖暖的舒服的温馨被套";s:5:"cover";s:35:"/Public/Home/Images/product-gg1.png";}i:3;a:3:{s:2:"id";s:1:"5";s:4:"name";s:6:"床单";s:5:"cover";s:27:"/Public/Home/Images/ima.jpg";}}
+?>

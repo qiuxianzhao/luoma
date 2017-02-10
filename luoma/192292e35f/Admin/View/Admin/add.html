@@ -1,0 +1,40 @@
+<extend name="Index/index" />
+<block name="content">
+<div class="header"><h1 class="page-title">添加管理员</h1></div>
+<ul class="breadcrumb">
+	<li><a href="{{:U('Admin/Admin/Index')}}">Home</a> <span class="divider">/</span></li>
+	<li class="active">添加管理员</li>
+</ul>
+<div class="container-fluid">
+	<div class="row-fluid">
+			<div class="btn-toolbar">
+				<button class="btn btn-primary" onClick="location='{{:U('Admin/index')}}'"><i class="icon-list"></i>管理员列表</button>
+			  <div class="btn-group">
+			  </div>
+			</div>
+			<div class="well">
+				<div id="myTabContent" class="tab-content">
+				  <div class="tab-pane active in" id="home">
+					<form action="{{:U('Admin/Admin/add')}}" method="post" enctype="multipart/form-data">
+						<label>管理员账号</label>
+						<input type="text" name="user" value="" class="input-xxlarge">
+						<label>登陆密码</label>
+						<input type="password" name="pwd" value="" class="input-xxlarge">
+						<label>确认密码</label>
+						<input type="password" name="pwd2" value="" class="input-xxlarge">
+						<label>状态</label>
+						<select name="is_show" class="input-xlarge">
+						  <option value="1">启用</option>
+						  <option value="0">禁用</option>
+						</select>
+						<label>排序</label>
+						<input type="text" name="orders" value="1" class="input-xlarge">								
+						<label></label>
+						<input class="btn btn-primary" type="submit" value="提交" />
+					</form>
+				  </div>
+			  </div>
+			</div>
+	</div>
+</div>
+</block>

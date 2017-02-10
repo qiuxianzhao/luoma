@@ -1,0 +1,98 @@
+<extend name="Index/index" />
+<block name="header"><title>产品分类</title></block>
+<block name="css">
+ <style>
+  .pagination span.current{
+  cursor: default;
+  }
+  .pagination div>a:first-child{
+      border-left-width: 1px;
+      border-radius: 3px 0 0 3px;
+  }
+  .pagination div>a:last-child{
+      border-radius: 0 3px 3px 0;
+  }
+  .pagination a.num,
+  .pagination span.current,
+  .pagination a.next,
+  .pagination a.prev,
+  .pagination a.first,
+  .pagination a.end{
+      float: left;
+      padding: 0 14px;
+      line-height: 38px;
+      text-decoration: none;
+      background-color: #ffffff;
+      border: 1px solid #dddddd;
+      border-left-width: 0;
+  }
+  </style>
+</block>
+<block name="content">
+  <div class="header"><h1 class="page-title">产品分类列表</h1></div>
+  <ul class="breadcrumb">
+      <li><a href="{{:U('Admin/Proimg/index')}}">Home</a> <span class="divider">/</span></li>
+      <li class="active">List</li>
+  </ul>
+
+  <div class="container-fluid">
+    <div class="row-fluid">
+                
+        <div class="btn-toolbar">
+         <!--  <button class="btn btn-primary" onClick="location='{{:U('Admin/Proimg/add')}}'"><i class="icon-plus"></i>产品分类</button> -->
+          <div class="btn-group"></div>
+        </div>
+        <div class="well">
+            <table class="table">
+              <tr>
+                <th>图片ID</th>
+                <th>产品ID</th>
+                <th>图片地址</th>
+                <th>排序</th>
+                <th>是否显示</th>
+                <th>添加时间</th>
+                <th style="width: 26px;"></th>
+              </tr>
+              <volist name="artList" id="item">
+              <tr>
+                <td>{{$item['id']}}</td>
+                <td><a href="{{:U('Admin/Proimg/index','pid='.$item['pid'])}}">{{$item['name']}}</a></td>
+                <td>{{$item['id']}}</td>
+                <td>{{$item['pid']}}</td>
+                <td>{{$item['orders']}}</td>
+                <td>{{$item['is_show']==1?'显示':'隐藏'}}</td>
+                <td>{{:date('Y-m-d H:i:s',$item['addtime'])}}</td>
+                <td>
+                    <a href="user.html"><i class="icon-pencil"></i></a>
+                    <a href="#myModal" class="del-a" data-href="{{:U('Admin/Proimg/index','del='.$item['id'])}}" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
+                </td>
+              </tr>
+              </volist>
+            </table>
+        </div>
+        <div class="pagination">
+          {{$showPage}}
+        </div>         
+      </div>
+  </div>
+</block>
+<!--  插件使用 -->
+<block name="MsgBox">
+    <div class="modal-footer">
+      <button class="btn" data-dismiss="modal" aria-hidden="true">取消</button>
+      <button class="btn btn-danger confirm-del" data-dismiss="modal">删除</button>
+    </div>
+    <script>
+    var $url;
+    $('.del-a').on('click',function(){
+       $url = $(this).attr('data-href');
+    })
+    $('.confirm-del').on('click',function(){
+      setTimeout(function(){
+        location.assign($url);
+      },300);
+    })
+    </script>
+</block>
+
+
